@@ -10,7 +10,8 @@ router.get("/", async (req, res) => {
   res.json({ msg: "Users endpoint" });
 })
 
-router.get("/usersList", authAdmin, async (req, res) => {
+//add authAdmin!!
+router.get("/usersList", async (req, res) => {
   try {
     let data = await UserModel.find({}, { password: 0 })
     res.status(200).json(data)
